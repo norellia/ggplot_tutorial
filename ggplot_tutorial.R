@@ -103,6 +103,12 @@ ggplot(data = penguins_clean,
 # you can use scale to choose a different preset-value for the colors
 # "?scale_" lets you explore all the options.
 
+# Color by body size using the viridis scale for continuous data
+ggplot(data = penguins_clean,
+       mapping = aes(x = bill_depth_mm, y = bill_length_mm, color = body_mass_g)) +
+  geom_point() +
+  scale_color_viridis_c()
+
 # Color by species, recolor by color names or hexes
 ggplot(data = penguins_clean,
        mapping = aes(x = bill_depth_mm, y = bill_length_mm)) +
@@ -110,12 +116,6 @@ ggplot(data = penguins_clean,
   scale_color_manual(values = c("darkorange","darkorchid","cyan4"))
 #scale_color_manual(values = c("#ff6e00","#c45ccb","#057276"))
 #https://imagecolorpicker.com/
-
-# Color by body size using the viridis scale for continuous data
-ggplot(data = penguins_clean,
-       mapping = aes(x = bill_depth_mm, y = bill_length_mm, color = body_mass_g)) +
-  geom_point() +
-  scale_color_viridis_c()
 
 # 6. Facets
 
